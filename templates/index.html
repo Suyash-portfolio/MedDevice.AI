@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block title %}Operations Dashboard | MedDevice.AI{% endblock %}
+
+{% block content %}
+<div class="space-y-6">
+    <!-- Medical Report Analyzer -->
+    <div id="report-analyzer-root"></div>
+    
+    <!-- Upper Welcome Banner & Status Controls -->
+    <header class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-4">
+        <div>
+            <h1 class="text-2xl font-bold text-white tracking-tight">Telemetry Control Terminal</h1>
+            <p class="text-sm text-slate-400">Query systems configuration documentation matrices instantly.</p>
+        </div>
+        <div class="flex items-center gap-3">
+            <span class="inline-flex items-center gap-1.5 text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1.5 rounded-full">
+                <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span> Model Match Pipeline Normal
+            </span>
+        </div>
+    </header>
+
+    <!-- Operational Split View Content Blocks Layout Matrix -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Sidebar Controls Block -->
+        <div class="space-y-6 lg:col-span-1">
+            <!-- Dynamic Parameter Preset Checklist Card -->
+            <div class="glass-card p-5 rounded-2xl space-y-4">
+                <h3 class="font-bold text-sm text-white flex items-center gap-2">
+                    <span>💡</span> Recommended Diagnostics Queries
+                </h3>
+                <div class="flex flex-col gap-2 text-xs">
+                    <button onclick="injectSuggestedQuery('How to calibrate an infusion pump error 404')" class="text-left p-3 rounded-xl bg-white/5 border border-white/5 hover:border-white/10 text-slate-300 hover:text-white transition">
+                        "Infusion pump error code 404 calibration steps"
+                    </button>
+                    <button onclick="injectSuggestedQuery('Defibrillator baseline battery threshold limits')" class="text-left p-3 rounded-xl bg-white/5 border border-white/5 hover:border-white/10 text-slate-300 hover:text-white transition">
+                        "Defibrillator safety test power tolerance parameters"
+                    </button>
+                    <button onclick="injectSuggestedQuery('Ventilator flow rate sensor maintenance frequency')" class="text-left p-3 rounded-xl bg-white/5 border border-white/5 hover:border-white/10 text-slate-300 hover:text-white transition">
+                        "Ventilator O2 validation interval guidelines"
+                    </button>
+                </div>
+            </div>
+
+            <!-- Integrated Fast Procurement Order Pipeline Widget Card -->
+            <div class="glass-card p-5 rounded-2xl space-y-4">
+                <h3 class="font-bold text-sm text-white flex items-center gap-2">
+                    <span>📦</span> Automated Logistics Pipeline
+                </h3>
+                <p class="text-xs text-slate-400 leading-normal">Generate direct requisition tokens linked directly to identified data rows.</p>
+                <div class="space-y-3 text-xs">
+                    <div>
+                        <label class="block text-slate-400 font-medium mb-1">Target Device Tag ID</label>
+                        <input type="text" id="procure-device-id" placeholder="e.g. INF-PUMP-90" class="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-indigo-500/50 transition">
+                    </div>
+                    <div>
+                        <label class="block text-slate-400 font-medium mb-1">Priority Validation Rank</label>
+                        <select id="procure-priority" class="w-full bg-slate-900 border border-white/10 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-indigo-500/50 transition">
+                            <option value="routine">Routine Operational Supply</option>
+                            <option value="urgent">Urgent Compliance Hazard</option>
+                        </select>
+                    </div>
+                    <button onclick="dispatchProcurementOrder()" class="w-full py-2.5 bg-indigo-600 hover:bg-indigo-500 font-bold rounded-xl text-white transition tracking-wide shadow-md">
+                        Dispatch Order Request Token
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Central Telemetry Workspace Output Container Terminal Layout -->
+        <div class="lg:col-span-2 glass-card rounded-2xl flex flex-col min-h-[500px] overflow-hidden">
+            <!-- Terminal Workspace Navigation Bar -->
+            <div class="p-4 bg-white/5 border-b border-white/10 flex justify-between items-center text-xs font-semibold text-slate-300">
+                <div class="flex items-center gap-2 text-white">
+                    <span>💻</span> Main Diagnostic Processing Core
+                </div>
+                <button onclick="clearWorkspaceLogs()" class="text-slate-400 hover:text-rose-400 transition">Clear History Trace</button>
+            </div>
+
+            <!-- Scrollable Log Stream Panel Block -->
+            <div id="workspace-log-stream" class="flex-1 p-6 overflow-y-auto space-y-4 custom-scrollbar font-mono text-xs">
+                <div class="text-slate-500 border-b border-white/5 pb-2">--- System Initialized. TF-IDF Weights Loaded. Ready for Stream Input ---</div>
+            </div>
+
+            <!-- Workspace Text Entry Input Bar Interface Block -->
+            <div class="p-4 bg-slate-950/40 border-t border-white/10 flex gap-2 items-center">
+                <button id="voice-recognition-toggle" onclick="toggleVoiceLogging()" class="p-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-sm transition" title="Toggle audio validation stream">
+                    🎤
+                </button>
+                <input type="text" id="workspace-query-input" placeholder="Enter custom search vectors or maintenance instructions query..." class="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500/50 transition">
+                <button onclick="submitWorkspaceQuery()" class="px-5 py-3 bg-indigo-600 hover:bg-indigo-500 font-bold text-xs rounded-xl text-white transition tracking-wider uppercase">
+                    Compute Match
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='js/report-analyzer.js') }}"></script>
+<script>
+    function injectSuggestedQuery(text) {
+        const input = document.getElementById('workspace-query-input');
+        if(input) {
+            input.value = text;
+            input.focus();
+            setTimeout(function() {
+                if (typeof submitWorkspaceQuery === 'function') {
+                    submitWorkspaceQuery();
+                }
+            }, 100);
+        }
+    }
+</script>
+{% endblock %}

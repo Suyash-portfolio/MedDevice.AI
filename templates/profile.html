@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}System Operator Settings Hub | MedDevice.AI{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto space-y-8 py-4">
+    <!-- View View Header Context -->
+    <header class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-6">
+        <div>
+            <h1 class="text-2xl font-bold text-white tracking-tight">System Operator Profile</h1>
+            <p class="text-sm text-slate-400">Manage verified authentication attributes and persistent operational nodes.</p>
+        </div>
+        <button id="logout-trigger-btn" class="glass-btn text-xs font-semibold px-4 py-2 rounded-xl text-rose-400 hover:bg-rose-500/10 hover:border-rose-500/30 transition">
+            Terminate Session
+        </button>
+    </header>
+
+    <!-- Structural Grid Layout Cards Matrix Blocks -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Account Structural Identity Details Metadata Card Column -->
+        <div class="glass-card p-6 rounded-2xl space-y-6 h-fit md:col-span-1">
+            <div class="space-y-2 text-center md:text-left">
+                <!-- Fallback Identity Monogram Avatar Element Layout -->
+                <div class="w-16 h-16 bg-gradient-to-tr from-indigo-600 to-teal-500 rounded-2xl mx-auto md:mx-0 flex items-center justify-center text-xl font-bold shadow-inner">
+                    MD
+                </div>
+                <h3 id="profile-email-field" class="text-sm font-bold text-slate-200 mt-4 break-words">loading_profile_context...</h3>
+                <span class="inline-block text-[10px] uppercase tracking-wider font-extrabold bg-teal-500/10 text-teal-300 border border-teal-500/20 px-2 py-0.5 rounded">
+                    Active Session Verified
+                </span>
+            </div>
+        </div>
+
+        <!-- Telemetry Compliance Status Tracking Data Grid Matrix Columns -->
+        <div class="md:col-span-2 space-y-6">
+            <div class="glass-card p-6 rounded-2xl space-y-4">
+                <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                    <span>⚡</span> Active Integration Pipelines
+                </h2>
+                <!-- Properties Data Grid Table Elements Rows Layout -->
+                <div class="border border-white/5 rounded-xl overflow-hidden bg-slate-950/20 divide-y divide-white/5 text-sm">
+                    <div class="p-4 flex justify-between items-center">
+                        <span class="text-slate-400 font-medium">History Retention Limits</span>
+                        <span class="font-mono text-slate-200">24 Hours (Rolling Auto-Prune Engine Active)</span>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <span class="text-slate-400 font-medium">Telemetry Logging Channel</span>
+                        <span class="font-mono text-emerald-400">Encrypted Cloud DB Node</span>
+                    </div>
+                    <div class="p-4 flex justify-between items-center">
+                        <span class="text-slate-400 font-medium">Vector Processing Engine Type</span>
+                        <span class="text-slate-200">TF-IDF Vectorizer Matrix Cluster</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Compliance Notice Alert Box Layout -->
+            <div class="p-4 rounded-xl bg-amber-500/5 border border-amber-500/10 text-xs text-amber-300/80 leading-relaxed">
+                <strong>Compliance Enforcement Notice:</strong> In adherence with medical equipment configuration records handling acts, conversational traces are retained for a max structural lifecycle of 24 hours prior to systematic schema purge routines.
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% block title %}About | MedDevice.AI{% endblock %}
+{% block content %}
+<div class="custom-scrollbar space-y-12 py-6">
+    <div class="text-center space-y-4">
+        <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-400 to-indigo-400 bg-clip-text text-transparent">About MedDevice.AI</h1>
+        <p class="text-slate-400 max-w-2xl mx-auto text-lg">An intelligent medical device classification system leveraging machine learning to provide accurate, real-time predictions for regulatory compliance and device categorization.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+        <div class="glass-card rounded-2xl p-6 text-center space-y-3">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-teal-400 to-emerald-600 flex items-center justify-center mx-auto text-2xl font-bold text-white shadow-lg">A</div>
+            <h3 class="text-xl font-semibold text-white">Accuracy</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">High-precision classification powered by TF-IDF vectorization and Logistic Regression, achieving reliable predictions across diverse medical device categories.</p>
+        </div>
+        <div class="glass-card rounded-2xl p-6 text-center space-y-3">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-indigo-400 to-purple-600 flex items-center justify-center mx-auto text-2xl font-bold text-white shadow-lg">S</div>
+            <h3 class="text-xl font-semibold text-white">Speed</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Real-time inference with sub-second response times, enabling rapid device classification and immediate feedback during the data entry workflow.</p>
+        </div>
+        <div class="glass-card rounded-2xl p-6 text-center space-y-3">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center mx-auto text-2xl font-bold text-white shadow-lg">A</div>
+            <h3 class="text-xl font-semibold text-white">Accessibility</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Web-based interface with voice input support via the Web Speech API, making device classification accessible from any modern browser without installation.</p>
+        </div>
+    </div>
+
+    <div class="space-y-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-white text-center">Technology Stack</h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="glass-card rounded-xl p-5 text-center">
+                <p class="text-xs uppercase tracking-widest text-indigo-400 font-semibold mb-1">Backend</p>
+                <p class="text-white font-medium">Flask</p>
+                <p class="text-slate-500 text-xs">Python Web Framework</p>
+            </div>
+            <div class="glass-card rounded-xl p-5 text-center">
+                <p class="text-xs uppercase tracking-widest text-indigo-400 font-semibold mb-1">ML Engine</p>
+                <p class="text-white font-medium">Scikit-learn</p>
+                <p class="text-slate-500 text-xs">TF-IDF &amp; Logistic Regression</p>
+            </div>
+            <div class="glass-card rounded-xl p-5 text-center">
+                <p class="text-xs uppercase tracking-widest text-indigo-400 font-semibold mb-1">Auth &amp; Database</p>
+                <p class="text-white font-medium">Supabase</p>
+                <p class="text-slate-500 text-xs">Authentication &amp; Data Store</p>
+            </div>
+            <div class="glass-card rounded-xl p-5 text-center">
+                <p class="text-xs uppercase tracking-widest text-indigo-400 font-semibold mb-1">Frontend</p>
+                <p class="text-white font-medium">Tailwind CSS</p>
+                <p class="text-slate-500 text-xs">Utility-first Styling</p>
+            </div>
+            <div class="glass-card rounded-xl p-5 text-center">
+                <p class="text-xs uppercase tracking-widest text-indigo-400 font-semibold mb-1">Voice Input</p>
+                <p class="text-white font-medium">Web Speech API</p>
+                <p class="text-slate-500 text-xs">Browser-based Speech</p>
+            </div>
+            <div class="glass-card rounded-xl p-5 text-center">
+                <p class="text-xs uppercase tracking-widest text-indigo-400 font-semibold mb-1">Model Persistence</p>
+                <p class="text-white font-medium">Joblib</p>
+                <p class="text-slate-500 text-xs">Model Serialization</p>
+            </div>
+            <div class="glass-card rounded-xl p-5 text-center">
+                <p class="text-xs uppercase tracking-widest text-indigo-400 font-semibold mb-1">Data Processing</p>
+                <p class="text-white font-medium">Pandas</p>
+                <p class="text-slate-500 text-xs">Dataset Manipulation</p>
+            </div>
+            <div class="glass-card rounded-xl p-5 text-center">
+                <p class="text-xs uppercase tracking-widest text-indigo-400 font-semibold mb-1">Security</p>
+                <p class="text-white font-medium">JWT</p>
+                <p class="text-slate-500 text-xs">Token Authentication</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="space-y-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-white text-center">ML Workflow</h2>
+        <div class="glass-card rounded-2xl p-8">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="text-center space-y-2">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-teal-400 to-emerald-500 flex items-center justify-center mx-auto text-white font-bold shadow-lg">1</div>
+                    <p class="text-white text-sm font-medium">Data Collection</p>
+                    <p class="text-slate-500 text-xs">Medical device descriptions</p>
+                </div>
+                <div class="text-center space-y-2">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center mx-auto text-white font-bold shadow-lg">2</div>
+                    <p class="text-white text-sm font-medium">Text Preprocessing</p>
+                    <p class="text-slate-500 text-xs">Cleaning &amp; normalization</p>
+                </div>
+                <div class="text-center space-y-2">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center mx-auto text-white font-bold shadow-lg">3</div>
+                    <p class="text-white text-sm font-medium">TF-IDF Vectorization</p>
+                    <p class="text-slate-500 text-xs">Feature extraction</p>
+                </div>
+                <div class="text-center space-y-2">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-teal-400 to-emerald-500 flex items-center justify-center mx-auto text-white font-bold shadow-lg">4</div>
+                    <p class="text-white text-sm font-medium">Logistic Regression</p>
+                    <p class="text-slate-500 text-xs">Model training</p>
+                </div>
+                <div class="text-center space-y-2">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center mx-auto text-white font-bold shadow-lg">5</div>
+                    <p class="text-white text-sm font-medium">Model Saving</p>
+                    <p class="text-slate-500 text-xs">Joblib persistence</p>
+                </div>
+                <div class="text-center space-y-2">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center mx-auto text-white font-bold shadow-lg">6</div>
+                    <p class="text-white text-sm font-medium">Real-time Prediction</p>
+                    <p class="text-slate-500 text-xs">Live classification</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="glass-card rounded-2xl p-8 text-center space-y-3 max-w-2xl mx-auto">
+        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-teal-400 to-indigo-500 flex items-center justify-center mx-auto text-3xl shadow-lg">🛡️</div>
+        <h3 class="text-2xl font-bold text-white">Developed by MedDevice.AI Team</h3>
+        <p class="text-slate-400">Empowering medical device classification through intelligent machine learning solutions.</p>
+        <div class="inline-block glass-btn text-xs font-semibold px-5 py-2 rounded-lg text-slate-300 mt-2">Version 3.0</div>
+    </div>
+</div>
+{% endblock %}

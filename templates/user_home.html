@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block title %}My Dashboard | MedDevice.AI{% endblock %}
+
+{% block content %}
+<div class="space-y-6" id="user-dashboard-root">
+    <div id="report-analyzer-root"></div>
+    <header class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-4">
+        <div>
+            <h1 class="text-2xl font-bold text-white tracking-tight">My Dashboard</h1>
+            <p class="text-sm text-slate-400" id="user-dashboard-greeting">Welcome back</p>
+        </div>
+        <div class="flex items-center gap-3">
+            <span class="inline-flex items-center gap-1.5 text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1.5 rounded-full">
+                <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span> Authenticated Session Active
+            </span>
+        </div>
+    </header>
+
+    <!-- Quick Stats Widgets -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="glass-card p-4 rounded-2xl space-y-1">
+            <div class="text-indigo-400 text-lg font-bold" id="stat-queries">0</div>
+            <div class="text-xs text-slate-400">AI Queries Today</div>
+        </div>
+        <div class="glass-card p-4 rounded-2xl space-y-1">
+            <div class="text-teal-400 text-lg font-bold" id="stat-favorites">0</div>
+            <div class="text-xs text-slate-400">Saved Devices</div>
+        </div>
+        <div class="glass-card p-4 rounded-2xl space-y-1">
+            <div class="text-amber-400 text-lg font-bold" id="stat-orders">0</div>
+            <div class="text-xs text-slate-400">Orders Placed</div>
+        </div>
+        <div class="glass-card p-4 rounded-2xl space-y-1">
+            <div class="text-purple-400 text-lg font-bold" id="stat-accuracy">--</div>
+            <div class="text-xs text-slate-400">Avg. Confidence</div>
+        </div>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Left Column -->
+        <div class="space-y-6 lg:col-span-2">
+            <!-- Recently Viewed -->
+            <div class="glass-card p-5 rounded-2xl space-y-3">
+                <h3 class="font-bold text-sm text-white flex items-center gap-2"><span>🕐</span> Recently Viewed Devices</h3>
+                <div id="recent-devices" class="text-xs text-slate-500">No devices viewed yet.</div>
+            </div>
+
+            <!-- Favorite Devices -->
+            <div class="glass-card p-5 rounded-2xl space-y-3">
+                <h3 class="font-bold text-sm text-white flex items-center gap-2"><span>⭐</span> Favorite Devices</h3>
+                <div id="favorite-devices" class="text-xs text-slate-500">No favorites yet. Browse devices to add some.</div>
+            </div>
+
+            <!-- AI Usage Stats -->
+            <div class="glass-card p-5 rounded-2xl space-y-3">
+                <h3 class="font-bold text-sm text-white flex items-center gap-2"><span>📊</span> AI Usage Statistics</h3>
+                <div id="ai-usage-stats" class="text-xs text-slate-500">Start using the AI Assistant to see your statistics.</div>
+            </div>
+
+            <!-- Order History -->
+            <div class="glass-card p-5 rounded-2xl space-y-3">
+                <h3 class="font-bold text-sm text-white flex items-center gap-2"><span>📦</span> Order History</h3>
+                <div id="order-history" class="text-xs text-slate-500">No orders placed yet.</div>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="space-y-6">
+            <!-- Activity Timeline -->
+            <div class="glass-card p-5 rounded-2xl space-y-3">
+                <h3 class="font-bold text-sm text-white flex items-center gap-2"><span>📋</span> Activity Timeline</h3>
+                <div id="activity-timeline" class="space-y-2 text-xs">
+                    <div class="text-slate-500">No recent activity.</div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="glass-card p-5 rounded-2xl space-y-3">
+                <h3 class="font-bold text-sm text-white flex items-center gap-2"><span>⚡</span> Quick Actions</h3>
+                <div class="flex flex-col gap-2 text-xs">
+                    <a href="/devices" class="p-3 rounded-xl bg-white/5 border border-white/5 hover:border-white/10 text-slate-300 hover:text-white transition text-center">Browse Devices</a>
+                    <a href="/dashboard" class="p-3 rounded-xl bg-white/5 border border-white/5 hover:border-white/10 text-slate-300 hover:text-white transition text-center">Open AI Assistant</a>
+                    <a href="/profile" class="p-3 rounded-xl bg-white/5 border border-white/5 hover:border-white/10 text-slate-300 hover:text-white transition text-center">Profile Settings</a>
+                </div>
+            </div>
+
+            <!-- Saved Searches -->
+            <div class="glass-card p-5 rounded-2xl space-y-3">
+                <h3 class="font-bold text-sm text-white flex items-center gap-2"><span>🔍</span> Saved Searches</h3>
+                <div id="saved-searches" class="text-xs text-slate-500">No saved searches.</div>
+            </div>
+
+            <!-- Personalized Suggestions -->
+            <div class="glass-card p-5 rounded-2xl space-y-3">
+                <h3 class="font-bold text-sm text-white flex items-center gap-2"><span>💡</span> Suggested Queries</h3>
+                <div id="user-suggestions" class="flex flex-col gap-2 text-xs"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='js/report-analyzer.js') }}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof loadUserDashboard === 'function') {
+            loadUserDashboard();
+        }
+    });
+</script>
+{% endblock %}
