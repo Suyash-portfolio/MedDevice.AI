@@ -10,8 +10,11 @@ from datetime import datetime
 
 import pytesseract
 from PIL import Image, ImageEnhance, ImageFilter
+import platform
 
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+# Only set the Windows path on Windows
+if platform.system() == "Windows":
+    pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 logger = logging.getLogger("MedDevice.AI.ReportAnalyzer")
 
@@ -183,31 +186,68 @@ def preprocess_image(image):
 def extract_text_from_image(image_path):
     try:
         img = Image.open(image_path)
+
         processed = preprocess_image(img)
-        text = pytesseract.image_to_string(processed, config='--psm 6 --oem 3')
-        if not text.strip():
-            text = pytesseract.image_to_string(img, config='--psm 6 --oem 3')
-        return text.strip()
+
+        return pytesseract.image_to_string(
+            processed,
+            config="--psm 6 --oem 3"
+        ).strip()
+
     except Exception as e:
-        logger.error(f"OCR extraction failed for {image_path}: {e}")
+        logger.error(f"OCR extraction failed: {e}")
         return ""
 
 def extract_text_from_pdf(pdf_path):
+    """
+    Extract text from PDF.
+    1. Try pdfplumber (works for normal PDFs)
+    2. If no text is found, fall back to OCR (if available)
+    """
+
+    # ---------- First attempt: pdfplumber ----------
+    try:
+        import pdfplumber
+
+        extracted_text = []
+
+        with pdfplumber.open(pdf_path) as pdf:
+            for page in pdf.pages:
+                txt = page.extract_text()
+                if txt:
+                    extracted_text.append(txt)
+
+        text = "\n".join(extracted_text).strip()
+
+        if text:
+            logger.info("Text extracted using pdfplumber.")
+            return text
+
+    except Exception as e:
+        logger.warning(f"pdfplumber extraction failed: {e}")
+
+    # ---------- Second attempt: OCR ----------
     try:
         from pdf2image import convert_from_path
-        poppler_path = r"C:\Users\Suyash\AppData\Local\Microsoft\WinGet\Packages\oschwartz10612.Poppler_Microsoft.Winget.Source_8wekyb3d8bbwe\poppler-25.07.0\Library\bin"
-        images = convert_from_path(pdf_path, dpi=300, poppler_path=poppler_path)
+
+        images = convert_from_path(pdf_path, dpi=300)
+
         full_text = []
-        for i, img in enumerate(images):
+
+        for img in images:
             processed = preprocess_image(img)
-            text = pytesseract.image_to_string(processed, config='--psm 6 --oem 3')
-            full_text.append(text.strip())
-        return '\n'.join(full_text)
-    except ImportError:
-        logger.error("pdf2image not installed")
-        return ""
+
+            txt = pytesseract.image_to_string(
+                processed,
+                config="--psm 6 --oem 3"
+            )
+
+            full_text.append(txt)
+
+        return "\n".join(full_text).strip()
+
     except Exception as e:
-        logger.error(f"PDF extraction failed: {e}")
+        logger.error(f"OCR PDF extraction failed: {e}")
         return ""
 
 def extract_text(file_path, file_type):
