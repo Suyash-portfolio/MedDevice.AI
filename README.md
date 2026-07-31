@@ -20,7 +20,6 @@ An intelligent healthcare platform that helps users discover, understand, and re
 ![OCR](https://img.shields.io/badge/OCR-Tesseract-green)
 ![Supabase](https://img.shields.io/badge/Database-Supabase-3ECF8E?logo=supabase)
 ![Bootstrap](https://img.shields.io/badge/UI-Bootstrap-7952B3?logo=bootstrap)
-![License](https://img.shields.io/badge/License-MIT-blue)
 
 </div>
 
