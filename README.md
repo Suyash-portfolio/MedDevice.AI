@@ -73,19 +73,7 @@ to provide an intelligent and user-friendly healthcare assistance platform.
 
 ### 🌐 Website
 
-👉 **YOUR_LIVE_WEBSITE_URL**
-
----
-
-# 📸 Screenshots
-
-| Home | Chatbot |
-|------|----------|
-| Add Screenshot | Add Screenshot |
-
-| Dashboard | Report Analyzer |
-|------------|----------------|
-| Add Screenshot | Add Screenshot |
+👉 [**MedDevice.AI**](https://meddevice-ai.onrender.com/)
 
 ---
 
@@ -372,10 +360,7 @@ MIT Academy of Engineering, Pune
 🌐 LinkedIn
 
 https://www.linkedin.com/in/suyash-hadole/
-
-💻 GitHub
-
-https://github.com/YOUR_USERNAME
+  
 
 ---
 
@@ -416,13 +401,6 @@ If you found this project useful,
 
 📢 Share it with others
 
----
-
-# 📜 License
-
-This project is licensed under the **MIT License**.
-
----
 
 <div align="center">
 
