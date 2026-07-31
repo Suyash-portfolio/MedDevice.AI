@@ -74,6 +74,7 @@ to provide an intelligent and user-friendly healthcare assistance platform.
 ## 📄 Research Work
 
 This project was developed as part of an academic research initiative in **Artificial Intelligence for Healthcare**. It is supported by an IEEE-style research paper titled **"MedDevice.AI: An AI-Powered Medical Device Assistant Using Retrieval-Augmented Generation and Optical Character Recognition."** The research focuses on integrating **Machine Learning, RAG, FAISS, OCR, and Speech Recognition** to build an intelligent medical device recommendation platform.
+
 👉 [**Research Paper | MedDevice.AI**](https://github.com/Suyash-portfolio/MedDevice.AI/blob/main/Suyash%20Sanjay%20Hadole_MedDevice.ai.pdf)
 
 ---
