@@ -1,180 +1,247 @@
-# MedDevice.AI – AI-Powered Medical Device Assistant
-
 <div align="center">
 
+# 🏥 MedDevice.AI
+
+### AI-Powered Medical Device Assistant
+
+An intelligent healthcare platform that helps users discover, understand, and recommend medical devices using **Artificial Intelligence, Machine Learning, Retrieval-Augmented Generation (RAG), Optical Character Recognition (OCR), and Speech Recognition**.
+
+<p align="center">
+
+<a href="YOUR_LIVE_WEBSITE_URL">
+<img src="https://img.shields.io/badge/🌐_Live_Demo-Visit_Website-4F46E5?style=for-the-badge">
+</a>
+
+<a href="YOUR_GITHUB_REPO_URL">
+<img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github">
+</a>
+
+</p>
+
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
-![Flask](https://img.shields.io/badge/Flask-Web%20Framework-black?logo=flask)
-![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-orange)
+![Flask](https://img.shields.io/badge/Backend-Flask-black?logo=flask)
+![Machine Learning](https://img.shields.io/badge/Machine-Learning-orange)
 ![RAG](https://img.shields.io/badge/RAG-FAISS-purple)
 ![OCR](https://img.shields.io/badge/OCR-Tesseract-green)
 ![Supabase](https://img.shields.io/badge/Database-Supabase-3ECF8E?logo=supabase)
+![Bootstrap](https://img.shields.io/badge/UI-Bootstrap-7952B3?logo=bootstrap)
 ![License](https://img.shields.io/badge/License-MIT-blue)
-
-**An AI-powered web application that helps users discover, understand, and recommend medical devices using Machine Learning, Retrieval-Augmented Generation (RAG), Optical Character Recognition (OCR), and Speech Recognition.**
 
 </div>
 
 ---
 
-## 📖 Overview
+# 📖 Overview
 
-**MedDevice.AI** is an intelligent healthcare web application developed to simplify medical device information retrieval. Users can interact with an AI chatbot using natural language, upload medical reports for OCR-based analysis, receive personalized medical device recommendations, and manage device orders through a secure cloud-based platform.
+**MedDevice.AI** is an AI-powered healthcare web application developed to simplify medical device discovery and recommendation.
 
-The project combines **Machine Learning**, **Retrieval-Augmented Generation (RAG)**, **FAISS**, **Optical Character Recognition (OCR)**, **Speech Recognition**, and **Supabase** into a unified healthcare assistance system.
+The platform enables users to interact with an intelligent chatbot using natural language, upload medical reports for automated analysis, receive personalized medical device recommendations, and securely manage device orders through a cloud-based platform.
+
+The project integrates multiple AI technologies including:
+
+- Machine Learning
+- Retrieval-Augmented Generation (RAG)
+- FAISS
+- Optical Character Recognition (OCR)
+- Speech Recognition
+- Supabase Authentication
+
+to provide an intelligent and user-friendly healthcare assistance platform.
 
 ---
 
-# ✨ Key Features
+# ✨ Features
 
-* 🤖 AI-powered Medical Device Chatbot
-* 🔍 Retrieval-Augmented Generation (RAG)
-* 📄 OCR-based Medical Report Analysis
-* 🎤 Speech Recognition
-* 🏥 Medical Device Recommendation
-* 📚 Medical Device Knowledge Base
-* 🔐 Secure User Authentication
-* 📊 Personalized Dashboard
-* 💬 Chat History
-* 🛒 Medical Device Ordering
-* 📱 Fully Responsive UI
+- 🤖 AI Medical Device Chatbot
+- 🔍 Retrieval-Augmented Generation (RAG)
+- 📚 FAISS Knowledge Retrieval
+- 🧠 Machine Learning Intent Classification
+- 📄 OCR-based Medical Report Analyzer
+- 🎤 Speech Recognition
+- 🩺 Medical Device Recommendation
+- 📋 Medical Device Information
+- 🔐 Secure Login & Signup
+- 👤 Personalized Dashboard
+- 💬 Chat History
+- 🛒 Medical Device Ordering
+- ☁️ Cloud Database Integration
+- 📱 Responsive UI
+
+---
+
+# 🚀 Live Demo
+
+### 🌐 Website
+
+👉 **YOUR_LIVE_WEBSITE_URL**
+
+---
+
+# 📸 Screenshots
+
+| Home | Chatbot |
+|------|----------|
+| Add Screenshot | Add Screenshot |
+
+| Dashboard | Report Analyzer |
+|------------|----------------|
+| Add Screenshot | Add Screenshot |
 
 ---
 
 # 🛠️ Tech Stack
 
-### Programming Languages
+## Programming Languages
 
-* Python
-* HTML5
-* CSS3
-* JavaScript
+- Python
+- HTML5
+- CSS3
+- JavaScript
 
-### Frontend
+---
 
-* Bootstrap 5
-* Responsive UI
+## Frontend
 
-### Backend
+- Bootstrap 5
+- Responsive UI
+- Fetch API
 
-* Flask
-* REST APIs
+---
 
-### Machine Learning
+## Backend
 
-* Scikit-learn
-* TF-IDF Vectorization
-* Logistic Regression
+- Flask
+- REST APIs
 
-### AI Technologies
+---
 
-* Retrieval-Augmented Generation (RAG)
-* FAISS
-* NLP
-* Speech Recognition
+## Machine Learning
 
-### OCR
+- Scikit-learn
+- TF-IDF Vectorizer
+- Logistic Regression
 
-* Tesseract OCR
-* pytesseract
-* pdf2image
+---
 
-### Database & Authentication
+## AI Technologies
 
-* Supabase
-* PostgreSQL
+- Retrieval-Augmented Generation (RAG)
+- FAISS
+- NLP
+- Speech Recognition
 
-### Development Tools
+---
 
-* VS Code
-* Git
-* GitHub
+## OCR
+
+- Tesseract OCR
+- pytesseract
+- pdf2image
+
+---
+
+## Database & Authentication
+
+- Supabase
+- PostgreSQL
+
+---
+
+## Development Tools
+
+- VS Code
+- Git
+- GitHub
 
 ---
 
 # 🏗️ System Architecture
 
 ```
-                    User
-                      │
-                      ▼
-          Responsive Web Interface
-        (HTML • CSS • Bootstrap • JS)
-                      │
-                      ▼
-              Flask Backend API
-                      │
-      ┌───────────────┼────────────────┐
-      │               │                │
-      ▼               ▼                ▼
-Machine Learning     OCR Engine     Authentication
-(TF-IDF + LR)      (Tesseract)      (Supabase)
-      │               │
-      ▼               ▼
- FAISS + RAG     Report Analysis
-      │               │
-      └───────► Device Recommendation
-                      │
-                      ▼
-              Supabase Database
-                      │
-                      ▼
-          Chat History & Device Orders
+                User
+                  │
+                  ▼
+        Responsive Web Application
+     (HTML • CSS • Bootstrap • JS)
+                  │
+                  ▼
+             Flask Backend
+                  │
+    ┌─────────────┼──────────────┐
+    │             │              │
+    ▼             ▼              ▼
+Machine       OCR Engine     Authentication
+Learning      Tesseract        Supabase
+(TF-IDF +
+Logistic Regression)
+    │
+    ▼
+FAISS + RAG
+    │
+    ▼
+Knowledge Base
+    │
+    ▼
+Medical Device Recommendation
+    │
+    ▼
+Chat History & Device Orders
 ```
 
 ---
 
-# 🚀 Features Workflow
+# 🔄 Workflow
 
-1. User logs into the application.
+1. User logs into the platform.
 2. User enters a text query or uses voice input.
-3. Query is preprocessed using NLP techniques.
-4. TF-IDF converts text into feature vectors.
+3. Query is preprocessed using NLP.
+4. TF-IDF converts text into numerical vectors.
 5. Logistic Regression predicts user intent.
-6. RAG retrieves relevant knowledge using FAISS.
-7. AI chatbot generates a context-aware response.
-8. Users can upload medical reports.
+6. FAISS retrieves relevant medical device knowledge.
+7. RAG generates a context-aware response.
+8. Users may upload medical reports.
 9. OCR extracts medical information.
-10. System recommends appropriate medical devices.
-11. Users can place device orders.
-12. Chat history and orders are stored securely in Supabase.
+10. Medical devices are recommended based on extracted findings.
+11. Users can place orders.
+12. Chat history and orders are securely stored in Supabase.
 
 ---
 
 # 📂 Project Structure
 
 ```
-MedDevice.AI/
+MedDevice.AI
 │
 ├── app.py
 ├── build_index.py
 ├── train_model.py
 ├── requirements.txt
-├── README.md
 │
-├── dataset/
+├── dataset
 │   ├── medical_devices.csv
 │   └── ...
 │
-├── models/
+├── models
 │   ├── logistic_model.pkl
 │   ├── tfidf_vectorizer.pkl
 │   └── faiss_index
 │
-├── static/
-│   ├── css/
-│   ├── js/
-│   ├── images/
-│   └── uploads/
-│
-├── templates/
+├── templates
 │   ├── index.html
 │   ├── dashboard.html
 │   ├── login.html
+│   ├── report_analyzer.html
 │   └── ...
 │
-├── utils/
+├── static
+│   ├── css
+│   ├── js
+│   ├── images
+│   └── uploads
 │
-└── reports/
+├── utils
+│
+└── README.md
 ```
 
 ---
@@ -184,8 +251,10 @@ MedDevice.AI/
 ## Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/MedDevice.AI.git
+git clone YOUR_GITHUB_REPO_URL
+```
 
+```bash
 cd MedDevice.AI
 ```
 
@@ -197,15 +266,13 @@ cd MedDevice.AI
 python -m venv venv
 ```
 
-Activate
-
-Windows
+### Windows
 
 ```bash
 venv\Scripts\activate
 ```
 
-Linux / macOS
+### Linux / macOS
 
 ```bash
 source venv/bin/activate
@@ -229,7 +296,7 @@ python build_index.py
 
 ---
 
-## Run Application
+## Start Application
 
 ```bash
 python app.py
@@ -243,67 +310,111 @@ http://127.0.0.1:5000
 
 ---
 
-# 📸 Screenshots
+# 📊 Functional Modules
 
-Add screenshots here.
-
-```
-Home Page
-
-AI Chatbot
-
-Medical Report Analyzer
-
-Dashboard
-
-Medical Device Ordering
-```
-
----
-
-# 📊 Core Modules
-
-* AI Chatbot
-* Machine Learning Prediction
-* TF-IDF Vectorization
-* Logistic Regression
-* Retrieval-Augmented Generation
-* FAISS Similarity Search
-* OCR Report Analyzer
-* Speech Recognition
-* Supabase Authentication
-* Chat History
-* Medical Device Ordering
+- User Authentication
+- AI Chatbot
+- TF-IDF Vectorization
+- Logistic Regression
+- Retrieval-Augmented Generation
+- FAISS Retrieval
+- OCR Report Analyzer
+- Medical Device Recommendation
+- Speech Recognition
+- Personalized Dashboard
+- Chat History
+- Medical Device Ordering
+- Cloud Database Management
 
 ---
 
 # 🎯 Future Enhancements
 
-* Large Language Model (LLM) Integration
-* Multilingual Support
-* Mobile Application
-* Hospital Database Integration
-* Image-based Medical Device Recognition
-* Real-time Inventory Management
-* Advanced Recommendation Engine
+- 🤖 Large Language Model (LLM) Integration
+- 🌍 Multilingual Support
+- 📱 Android & iOS Application
+- 🏥 Hospital Database Integration
+- 🖼️ Image-based Medical Device Recognition
+- 📦 Real-time Inventory Management
+- 📈 Advanced Analytics Dashboard
+- ☁️ Cloud Deployment Optimization
+
+---
+
+# 💻 Technologies Used
+
+| Category | Technologies |
+|----------|--------------|
+| Programming | Python, HTML, CSS, JavaScript |
+| Backend | Flask |
+| Frontend | Bootstrap |
+| ML | Scikit-learn, TF-IDF, Logistic Regression |
+| AI | RAG, FAISS |
+| OCR | Tesseract OCR, pytesseract, pdf2image |
+| Database | Supabase PostgreSQL |
+| Voice | Web Speech API |
 
 ---
 
 # 👨‍💻 Author
 
-**Suyash Hadole**
+## **Suyash Hadole**
 
-**Founder & Developer – MedDevice.AI**
+Founder & Developer — **MedDevice.AI**
 
-B.Tech Computer Science & Engineering (AI & ML)
+🎓 B.Tech Computer Science & Engineering (AI & ML)
 
 MIT Academy of Engineering, Pune
 
-📧 Email: **[suyashhadole14@mail.com](mailto:suyashhadole14@mail.com)**
+📧 Email:
+**suyashhadole14@mail.com**
 
-🔗 LinkedIn: [https://www.linkedin.com/in/suyash-hadole/](https://www.linkedin.com/in/suyash-hadole/)
+🌐 LinkedIn
 
-💻 GitHub: [https://github.com/yourusername](https://github.com/yourusername)
+https://www.linkedin.com/in/suyash-hadole/
+
+💻 GitHub
+
+https://github.com/YOUR_USERNAME
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository
+2. Create a new branch
+
+```
+git checkout -b feature-name
+```
+
+3. Commit your changes
+
+```
+git commit -m "Added new feature"
+```
+
+4. Push
+
+```
+git push origin feature-name
+```
+
+5. Open a Pull Request
+
+---
+
+# ⭐ Support
+
+If you found this project useful,
+
+⭐ Star this repository
+
+🍴 Fork the project
+
+📢 Share it with others
 
 ---
 
@@ -313,16 +424,10 @@ This project is licensed under the **MIT License**.
 
 ---
 
-# ⭐ Support
+<div align="center">
 
-If you found this project helpful:
+### ❤️ Built with Python, Flask, Machine Learning, RAG & OCR
 
-⭐ Star this repository
+**MedDevice.AI — Empowering Healthcare Through Artificial Intelligence**
 
-🍴 Fork the repository
-
-🤝 Contribute by submitting Pull Requests
-
----
-
-> **MedDevice.AI** demonstrates the practical application of Artificial Intelligence, Machine Learning, Retrieval-Augmented Generation (RAG), Optical Character Recognition (OCR), and cloud technologies to create an intelligent, scalable, and user-friendly healthcare assistance platform.
+</div>
