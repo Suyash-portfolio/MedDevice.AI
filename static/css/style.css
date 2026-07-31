@@ -565,4 +565,37 @@ details.glass-card summary::marker { display: none; }
   line-height: 1.5;
 }
 
+/* Founder Section - Tech Badges */
+.tech-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #a5b4fc;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+.tech-badge:hover {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.35);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+}
+
+/* Founder Section - Scroll Fade-In Animation */
+.founder-section {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: founderFadeIn 0.8s ease-out forwards;
+}
+@keyframes founderFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* .hidden is provided by Tailwind CSS - do NOT redefine with !important as it breaks responsive md: variants */
