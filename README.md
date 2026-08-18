@@ -7,11 +7,11 @@
 An intelligent healthcare platform that helps users discover, understand, and recommend medical devices using **Artificial Intelligence, Machine Learning, Retrieval-Augmented Generation (RAG), Optical Character Recognition (OCR), and Speech Recognition**.
 
 <p align="center">
-<a href=["MedDevice.AI"](https://meddevice-ai.onrender.com/)>
-<img src="https://img.shields.io/badge/🌐_Live_Demo-Visit_Website-4F46E5?style=for-the-badge">
-</a>
-
+  <a href="https://meddevice-ai.onrender.com/">
+    <img src="https://img.shields.io/badge/🌐_Live_Demo-Visit_Website-4F46E5?style=for-the-badge">
+  </a>
 </p>
+
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
 ![Flask](https://img.shields.io/badge/Backend-Flask-black?logo=flask)
