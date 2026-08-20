@@ -23,7 +23,7 @@ An intelligent healthcare platform that helps users discover, understand, and re
 
 </div>
 
----
+---    
 
 # 📖 Overview
 
@@ -297,7 +297,7 @@ Open
 ```
 http://127.0.0.1:5000
 ```
-
+                        
 ---
 
 # 📊 Functional Modules
